@@ -77,7 +77,14 @@
     67/udp (v6) on br0         ALLOW       Anywhere (v6)              (log)
     5900/tcp (v6) on br0       ALLOW       Anywhere (v6)              (log)
     ~~~
-- セキュリティチェック   
+    
+- ### プロファイルのインポート
+    gufwで設定したprofileをインポートする   
+    gufwの場合ファイルタブのインポートから入れる   
+    コマンドラインから設定する場合は、/etc/ufw/applications.dにファイルを入れる   
+    [how do you create an app profile for ufw?](https://askubuntu.com/questions/409013/how-do-you-create-an-app-profile-for-ufw)
+
+- ### セキュリティチェック   
     WAN側からnmapを使用することで各ポートの状態を把握することができる   
     [攻撃者の心理：Nmapを使ったネットワーク解析の実践](https://se-cure.info/?p=2318#Nmap-3)   
     [nmapコマンドで覚えておきたい使い方11個](https://orebibou.com/2015/06/nmap%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%A7%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E4%BD%BF%E3%81%84%E6%96%B911%E5%80%8B/#OS)   
@@ -100,7 +107,7 @@
         https://www.atmarkit.co.jp/fsecurity/rensai/securitytips/006portscan.html   
         [自己診断サービス『自診くん』](https://jisin.lac.co.jp/?_ga=2.137645616.1264313564.1559736281-1641168572.1559391709)
 
-- ufw のログの確認(アクセスしてくる輩の観察)   
+- ### ufw のログの確認(アクセスしてくる輩の観察)   
     外部からのアクセスブロックログ
     > grep "IN=ppp0" /var/log/ufw.log 
     ![](./img/gufw_log.png)
